@@ -1,0 +1,21 @@
+{
+  "name": "p2_soio_chatr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "16.13.1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.17.3",
+    "helmet": "^5.0.2",
+    "socket.io": "^4.4.1"
+  }
+}
