@@ -7,10 +7,10 @@ const io = new Server(server);
 const helmet = require('helmet');
 const compression = require ('compression');
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 9090;
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 
@@ -18,11 +18,17 @@ io.on('connection', (socket) => {
   console.log('a user connected');
 
   socket.on('chat message', (msg) => {
-    io.emit('chat message', msg);
+    socket.broadcast.emit('chat message', msg);
   });
+  
+
 
   socket.on('disconnect', () => console.log('Client disconnected'));
 });
+
+
+
+
 
 app.use(helmet());
 app.use(compression());
