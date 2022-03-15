@@ -6,12 +6,16 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 const helmet = require('helmet');
 const compression = require ('compression');
+/* const path = require('path'); */
 
 const PORT = process.env.PORT || 9090;
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
+
+ app.use(express.static('public')); 
+/* app.use(express.static(path.join(__dirname, '/public/css'))); */
 
 
 io.on('connection', (socket) => {
