@@ -6,17 +6,19 @@ const { Server } = require("socket.io");
 const io = new Server(server);
 const helmet = require('helmet');
 const compression = require ('compression');
+const PORT = process.env.PORT || 9090;
 /* const path = require('path'); */
 
-const PORT = process.env.PORT || 9090;
+
+
+app.use(express.static('public')); 
+/* app.use(express.static(path.join(__dirname, '/public/css'))); */
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
- app.use(express.static('public')); 
-/* app.use(express.static(path.join(__dirname, '/public/css'))); */
-
+ 
 
 io.on('connection', (socket) => {
   console.log('a user connected');
@@ -31,9 +33,6 @@ io.on('connection', (socket) => {
 });
 
 
-
-
-
 app.use(helmet());
 app.use(compression());
 
@@ -41,7 +40,6 @@ app.use(compression());
 server.listen(PORT, () => {
   console.log(`Listening on ${PORT}`);
 });
-
 
 
 
