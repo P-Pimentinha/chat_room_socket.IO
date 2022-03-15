@@ -1,5 +1,6 @@
 let socket = io();
-      
+const username = prompt('Enter a username');
+
         const messageBox = document.querySelector('#messageBox');
         const messageForm = document.querySelector('#messageForm');
       
@@ -11,7 +12,7 @@ let socket = io();
           showMessageSent(message);
 
           if (messageBox.value) {
-            socket.emit('chat message', messageBox.value);
+            socket.emit('chat message',  username + ": " + messageBox.value);
             messageBox.value = '';
           }
         });
