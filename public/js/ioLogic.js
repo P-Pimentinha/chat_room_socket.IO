@@ -1,19 +1,20 @@
 let socket = io();
+
 const username = prompt('Enter a username');
 
-        const messageBox = document.querySelector('#messageBox');
-        const messageForm = document.querySelector('#messageForm');
+const messageBox = document.querySelector('#messageBox');
+const messageForm = document.querySelector('#messageForm');
       
-        // Event handler when the client enters a message
-        messageForm.addEventListener('submit', function(e) {
-          e.preventDefault();
+// Event handler when the client enters a message
+    messageForm.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-          const message = messageBox.value;
-          showMessageSent(message);
+      const message = messageBox.value;
+      showMessageSent(message);
 
-          if (messageBox.value) {
-            socket.emit('chat message',  username + ": " + messageBox.value);
-            messageBox.value = '';
+      if (messageBox.value) {
+        socket.emit('chat message',  username + ": " + messageBox.value);
+        messageBox.value = '';
           }
         });
 
