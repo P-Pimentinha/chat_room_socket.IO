@@ -4,6 +4,10 @@ Description: Chat Room is a simple chat application developed with the intent of
 
 Features: Chat room allows the users to enter a username and send messages to each other. The name of the person that sent the message is also displayed before the message.
 
+Use: the app can be accessed using the following url: 
+https://desolate-mesa-58152.herokuapp.com/
+
+
 Technologies: 
 •	Engine: Node.JS 16.13.1
 •	Cloud Platform: Heroku
@@ -12,3 +16,5 @@ Technologies:
     -	express@4.17.3
     -	helmet@5.0.2
     -	socket.io@4.4.1
+
+
