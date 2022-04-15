@@ -2,7 +2,10 @@ Title: Chat Room
 
 Description: Chat Room is a simple chat application developed with the intent of having the first contact with WebSockets. The project was initiated through the tutorial found on the socket.io web page (https://socket.io/get-started/chat). After the first phase being completed, I reshaped the app to have a more appealing design, as well a few more features.
 
-Features: Chat room allows the users to enter a username and send messages to each other. The name of the person that sent the message is also displayed before the message.
+Additional features:
+-Chat room allows the users to enter a username. 
+-The name of the user is shown on the screen along with the message.
+
 
 Use: the app can be accessed using the following url: 
 https://desolate-mesa-58152.herokuapp.com/
